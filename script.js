@@ -15,8 +15,9 @@ const employee = {
   lastName: lastName,
   salary: parseFloat(salary)
 }
+inputs.push(employee); 
+// push employee object into the inputs array
 console.log(inputs);
-inputs.push(employee);
 keepRunning = confirm("Do you want to add a new employee?");
 }
 return inputs;
@@ -43,8 +44,10 @@ totalSalary += employee.salary;
 const averageSalary = totalSalary / employeesArray.length;
 console.log("Average Salary: " + averageSalary.toFixed(2));
 }
+
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
+  // check if the employee array is empty
   if (employeesArray.length === 0) {
     console.log("No employees");
     return;
@@ -53,6 +56,7 @@ const getRandomEmployee = function(employeesArray) {
   const randomEmployee = employeesArray[randomIndex];
   console.log("Random Employee");
   console.log(randomEmployee);
+  
   // TODO: Select and display a random employee
   // My instructor Dan wrote this comment: don't forget: Math.floor(Math.random()*# of employees)
 }
