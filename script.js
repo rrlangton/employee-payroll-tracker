@@ -8,58 +8,56 @@ const inputs = [];
 let keepRunning = true;
 while(keepRunning){ 
   const firstName = prompt("First Name");
+  if (!firstName) break; // Exit loop if user cancels
   const lastName = prompt("Last Name");
-  const salary = prompt("Salary");
-const employee = {
-  firstName: firstName, 
-  lastName: lastName,
-  salary: parseFloat(salary)
-}
-inputs.push(employee); 
-// push employee object into the inputs array
+  if (!lastName) break; // Exit loop if user cancels
+  let salary;
+        do {
+            salary = prompt("Salary");
+        } while (salary && isNaN(parseFloat(salary))); // Ensure valid salary input or exit loop
+        if (!salary) break; // Exit loop if user cancels
+        const employee = {
+            firstName: firstName, 
+            lastName: lastName,
+            salary: parseFloat(salary)
+        };
+inputs.push(employee); // push employee object into the inputs array
 console.log(inputs);
 keepRunning = confirm("Do you want to add a new employee?");
 }
 return inputs;
-}
-addEmployeesBtn.addEventListener("click", collectEmployees);
-  // TODO: Get user input to create and return an array of employee objects
-  // get user input
-  // ask for first name
-  // ask for last name
-  // ask for salary
-  // make employee objects
-  // add them to an array
-  // My instructor Dan wrote this comment:  MUST RETURN ARRAY OF EMPLOYEE DATA
+};
 
-// Display the average salary
+// TODO: Calculate and display the average salary
+// My instructor Dan wrote this comment:  get salaries from objects
 const displayAverageSalary = function(employeesArray) {
-  // TODO: Calculate and display the average salary
-  // My instructor Dan wrote this comment:  get salaries from objects
 
-let totalSalary = 0;
-employeesArray.forEach(employee => {
-totalSalary += employee.salary;
-});
-const averageSalary = totalSalary / employeesArray.length;
-console.log("Average Salary: " + averageSalary.toFixed(2));
-}
-
-// Select a random employee
-const getRandomEmployee = function(employeesArray) {
-  // check if the employee array is empty
   if (employeesArray.length === 0) {
     console.log("No employees");
     return;
   }
+  let totalSalary = 0;
+  employeesArray.forEach(employee => {
+    totalSalary += employee.salary;
+  });
+  const averageSalary = totalSalary / employeesArray.length;
+  console.log("Average Salary: " + averageSalary.toFixed(2));
+};
+
+// Select a random employee
+const getRandomEmployee = function(employeesArray) {
+// check if the employee array is empty
+  if (employeesArray.length === 0) {
+    console.log("No employees");
+    return;
+  }
+// TODO: Select and display a random employee
+// My instructor Dan wrote this comment: don't forget: Math.floor(Math.random()*# of employees)
   const randomIndex = Math.floor(Math.random() * employeesArray.length);
   const randomEmployee = employeesArray[randomIndex];
   console.log("Random Employee");
   console.log(randomEmployee);
-  
-  // TODO: Select and display a random employee
-  // My instructor Dan wrote this comment: don't forget: Math.floor(Math.random()*# of employees)
-}
+};
 /*
   ====================
   STARTER CODE

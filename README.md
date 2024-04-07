@@ -1,19 +1,15 @@
-## Acceptance Criteria
-GIVEN an employee payroll tracker
-WHEN I click the "Add employee" button
-THEN I am presented with a series of prompts asking for first name, last name, and salary
-WHEN I finish adding an employee
-THEN I am prompted to continue or cancel
-WHEN I choose to continue
-THEN I am prompted to add a new employee
-WHEN I choose to cancel
-THEN my employee data is displayed on the page sorted alphabetically by last name, and the console shows computed and aggregated data
+# Employee Payroll Tracker
 
+## Description
 
-Sources:
+This application enables a payroll manager to view and manage employee payroll data. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code. It will have a clean and polished, responsive user interface that adapts to multiple screen sizes. The user will be able to click the 'Add Employee' button to enter the information of the new employee, which will add that new information to the employee data in the console. 
 
-Worked on writing code for "while loop" and for "selecting random employee" with tutor. 
+### Link to Github Repo:
 
-W3 schools for help with function parameters: https://www.w3schools.com/js/js_function_parameters.asp
+### Sources:
 
-How to find avg of an array: https://www.explainthis.io/en/swe/find-average-in-an-array
+* Worked on writing code for "while loop" and for "selecting random employee" with tutor
+
+* https://www.w3schools.com/js/js_function_parameters.asp
+
+* How to find avg of an array: https://www.explainthis.io/en/swe/find-average-in-an-array
