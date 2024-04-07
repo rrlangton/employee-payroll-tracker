@@ -72,6 +72,9 @@ const displayEmployees = function(employeesArray) {
   // Clear the employee table
   employeeTable.innerHTML = '';
 
+  // Sort employees alphabetically by last name
+  employeesArray.sort((a, b) => a.lastName.localeCompare(b.lastName));
+
   // Loop through the employee data and create a row for each employee
   for (let i = 0; i < employeesArray.length; i++) {
     const currentEmployee = employeesArray[i];
